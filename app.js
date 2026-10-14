@@ -1508,7 +1508,8 @@ async function markWhatsappClicked(orderId) {
 
   if (!orderId) return;
   try {
-    await supabaseClient.rpc('mark_whatsapp_sent', { p_id: String(orderId) });
+    // 💡 這裡要改成呼叫 cici 專屬的 rpc 函數名稱！
+    await supabaseClient.rpc('mark_whatsapp_sent_cici', { p_id: String(orderId) });
   } catch (e) {
     console.error('更新 WhatsApp 點擊狀態失敗:', e);
   }
